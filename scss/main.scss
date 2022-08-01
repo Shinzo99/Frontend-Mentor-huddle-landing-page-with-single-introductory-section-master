@@ -1,0 +1,176 @@
+@import './base/root.scss';
+@import './base/reset.scss';
+
+body {
+    background-image: url('../images/bg-mobile.svg');
+    background-color: var(--clr-primary-violet);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: start;
+
+    .logo {
+        max-width: 10em;
+        margin: 3em;
+    }
+}
+
+main {
+
+    display: flex;
+    justify-content: center;
+    
+    .container {
+        margin: 2em; 
+
+        .illustration {
+
+            display: flex;
+            justify-content: center;
+    
+            img {
+                max-width: 25em;
+                margin-bottom: 5em;
+            }
+    
+        }
+    
+        .desc__section {
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            h1 {
+                font-family: var(--ff-headings);
+                font-weight: var(--fw-bold);
+                color: var(--clr-white);
+                text-align: center;
+            }
+    
+            p {
+                font-family: var(--ff-primary);
+                font-size: var(--fs-500);
+                color: var(--clr-white);
+                text-align: center;
+                padding: .8em;
+            }
+    
+            button {
+                border: none;
+                border-radius: 2.5em;
+                padding: .75em;
+                margin: 1em 0em;
+                min-width: 15em;
+                font-family: var(--ff-primary);
+                color: var(--clr-primary-violet);
+                font-weight: var(--fw-bold);
+                box-shadow: 3px 5px 1px rgb(0 0 0 / 31%);
+                display: grid;
+                align-self: center;
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+
+    .icons {
+
+        i {
+            color: var(--clr-white);
+            padding: .5em;
+            border: 1px solid #fff;
+            border-radius: 100%;
+            margin: 2em .5em;
+            margin-bottom: 3em;
+        }
+
+        :first-child {
+            padding: 0.5em 0.7em;
+        }
+        
+    }
+}
+
+@media (min-width: 60em) {
+    
+    body { // the reason i wrapped the whole css in the body tag is so that i can ovveride some of the css properties
+        background-image: url('../images/bg-desktop.svg');
+
+        .logo {
+            min-width: 15em;
+            margin-left: 7em;
+        }
+    
+        .container {
+            display: flex;
+    
+            .illustration img {
+                min-width: 52em;
+                margin: 2em 0em 2em 5em;
+            }
+    
+            .desc__section {
+    
+                margin-left: 10em;
+                margin-bottom: 10em;
+    
+                h1 {
+                    text-align: start;
+                    font-size: var(--fs-700);
+                    margin-right: 8em;
+                }
+    
+                p{
+                    text-align: start;
+                    margin-right: 12em;
+                    padding: .8em 0em;
+                }
+    
+                button {
+                    align-self: flex-start;
+                    min-width: 12em;
+                    padding: .9em;
+                    font-size: var(--fs-400);
+                    cursor: pointer;
+                    box-shadow: 2px 2px 10px 3px rgb(0 0 0 / 31%);
+                }
+
+                button:hover {
+                    background-color: var(--clr-soft-magenta);
+                    color: var(--clr-white);
+                    transition: .2s ease-in-out;
+                }
+            }
+        }
+
+        footer {
+            justify-content: end;
+
+            .icons {
+                margin-right: 10em;
+                
+                i {
+                    padding: .8em;
+                }
+
+                i:hover {
+                    color: var(--clr-soft-magenta);
+                    border: 1px solid var(--clr-soft-magenta);
+                    cursor: pointer;
+                    transition: .2s ease-in-out;
+                }
+
+                :first-child {
+                    padding: 0.8em 1em;
+                }
+            }
+        }
+    }
+}
